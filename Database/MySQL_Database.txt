@@ -1,0 +1,23 @@
+Database:
+
+create database nammakada;
+
+Admin Table:
+
+create table admin(username varchar(20),password varchar(20));
+
+Company Table:
+
+create table company(company_name varchar(20) NOT NULL PRIMARY KEY,password varchar(20),cash_balance int);
+
+Items Table:
+
+create table items(Item_ID int NOT NULL PRIMARY KEY AUTO_INCREMENT,Item_Name varchar(20),Rate int,Quantity int);
+
+Purchase Table:
+
+create table purchase(purchase_id int PRIMARY KEY AUTO_INCREMENT,time datetime current_timestamp(), Item_ID int, Item_Name varchar(20),Qty int, Rate int,Amount int);
+
+Sales Table:
+
+create table sales(Sales_ID int PRIMARY KEY AUTO_INCREMENT,Time datetime current_timestamp(), Item_ID int,Qty int, Rate int,Amount int);
