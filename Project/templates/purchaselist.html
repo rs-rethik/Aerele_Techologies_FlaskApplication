@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Namma Ooru Kadai
+        </title>
+        <style>
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/company">Company</a></li>
+            <li><a href="/stack">Stacks</a></li>
+            <li><a href="/purchaselist">Purchase</a></li>
+            <li><a href="/saleslist">Sales</a></li>
+            <li style="float: right;"><a href="#"><b>CASH BALANCE : </b>{{cash.cash_balance}}</a></li>
+        </ul>
+    </div>
+    <hr>
+    <table>
+        <tr>
+          <th>Purchase ID</th>
+          <th>Time</th>
+          <th>Item ID</th>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Rate</th>
+          <th>Amount</th>
+        </tr>
+        {% for data in datas %}
+              <tr>
+                  <td>{{data.purchase_id}}</td>
+                  <td>{{data.time}}</td>
+        <!--<td><a href="{{url_for('addcash')}}">Update Amount</a></td>-->
+                  <td>{{data.Item_ID}}</td>
+                  <td>{{data.Item_Name}}</td>
+                  <td>{{data.Qty}}</td>
+                  <td>{{data.Rate}}</td>
+                  <td>{{data.Amount}}</td>
+              </tr>
+          {% endfor %}
+      </table>
+      <a href="{{url_for('purchase')}}">Purchase</a>
+</body>
+</html>

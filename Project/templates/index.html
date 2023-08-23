@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Namma Ooru Kadai
+        </title>
+        <style>
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+h1,h2{
+    color: #0087ca;
+    text-align: center;
+}
+#b1{
+    position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(125%, -50%);
+}
+#b2{
+    position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-260%, -50%);
+      align-items: center;
+}
+.button{
+    background-color: #0087ca;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+border-radius: 12px;
+
+}
+#adminlogo{
+    position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-300%, -125%);
+      align-items: center;
+}
+
+#companylogo{
+    position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(200%, -120%);
+}
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li style="float: right;"><a href="3">Contact</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+    <h1>WELCOME TO NAMMA OORU KADAI !</h1>
+    <h2>செய்யும் தொழிலே தெய்வம்</h2>
+</div>
+    <div>
+        <form action="/companylogin">
+        <img src="/static/company.jpg"  height="90" id="companylogo">
+       <input type="submit" id="b1" class="button" value="Company" >
+        </form>
+        <form action="/adminlogin">
+       <img src="/static/admin.jpg"  height="90" id="adminlogo">
+       <input type="submit" id="b2" class="button" value="Admin">
+    </form>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Namma Ooru Kadai
+        </title>
+        <style>
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+h1,h2{
+    color: #0087ca;
+    text-align: center;
+}
+.container{
+                top:50%;
+                left:50%;
+                position:absolute;
+                transform:translate(-50%,-50%);
+                color:white;
+            }
+            .card{
+                color:white;
+                padding:60px 40px 50px 40px;
+                background:#cceeff ;
+                border-radius: 20px;
+            }
+            #button{
+                padding:10px 20px;
+                border-radius:20px;
+                border: none;
+                outline: none;
+                background:#006699;
+                color:white;
+                margin-top: 20px;
+                margin-left: 160px;
+                margin: 0;
+                position: absolute;
+                top: 80%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+
+            }
+            #button:hover{
+                background: #006699;
+                color:black;
+                cursor: pointer;
+            }
+            #name{
+                width: 200px;
+                border:none;
+                background:transparent;
+                border-bottom: 1px solid rgb(14, 13, 13);
+                padding:6px;
+                margin-bottom: 20px;
+                color:rgb(0, 0, 0);
+                outline: none;
+            }
+</style>
+<body>
+    <div>
+        <ul>
+            <li><a href="/adminpage">Home</a></li>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li style="float: right;"><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="card">
+            <form action="" method="post">
+                <input type="text" placeholder="Company" id="name" name="company"><br>
+                <input type="password" placeholder="Password" id="name" name="password"><br>
+                <button type="submit" id="button" >Add</button>
+            </form>
+        </div>
+    </div>
+</body>

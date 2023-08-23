@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Namma Ooru Kadai
+        </title>
+        <style>
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.container{
+                top:50%;
+                left:50%;
+                position:absolute;
+                transform:translate(-50%,-50%);
+            }
+            .card{
+                padding:60px 40px 50px 40px;
+                background-color: #cceeff ;
+                border-radius: 10px;
+            }
+            #name{
+                width: 200px;
+                border:none;
+                background:transparent;
+                border-bottom: 1px solid rgb(14, 13, 13);
+                padding:6px;
+                margin-bottom: 20px;
+                color:rgb(0, 0, 0);
+                outline: none;
+            }
+            #button{
+                padding:10px 20px;
+                border-radius:20px;
+                border: none;
+                outline: none;
+                background:#0087ca;
+                color:white;
+                margin-top: 20px;
+                margin-left: 60px;
+            }
+            #button:hover{
+                background: #006699;
+                color:black;
+                cursor: pointer;
+            }
+            img{
+                border-radius: 50%;
+                position: absolute;
+                margin-left: 115px;
+                margin-top: -40px;
+            }
+            h1{
+    color: #0087ca;
+    text-align: center;
+}
+</style>
+<body>
+    <div>
+        <ul>
+            <li><a href="/templates/index.html">Home</a></li>
+            <li><a href="/templates/companylogin.html">Company</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li style="float: right;"><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <h1>ADMINISTRATOR</h1>
+    </div>
+    <div class="container">
+        <img src="/static/user.jpg" height="70" width="70">
+        <div class="card">
+            <form action="/admin" method="post">
+            <input type="text" placeholder="Username" id="name" name="username"><br>
+            <input type="password" placeholder="Password" id="name" name="password"><br>
+            <button type="submit" id="button">Login</button>
+        </form>
+        </div>
+    </div>
+</body>

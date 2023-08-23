@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Namma Ooru Kadai
+        </title>
+        <style>
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.container{
+                top:50%;
+                left:50%;
+                position:absolute;
+                transform:translate(-50%,-50%);
+                color:white;
+            }
+            .card{
+                color:rgb(0, 0, 0);
+                padding:60px 40px 50px 40px;
+                background:#cceeff ;
+                border-radius: 20px;
+            }
+            #name{
+                width: 400px;
+                border:none;
+                background:transparent;
+                border-bottom: 1px solid white;
+                padding:6px;
+                margin-bottom: 20px;
+                color:rgb(0, 0, 0);
+                outline: none;
+            }
+            #button{
+                padding:10px 20px;
+                border-radius:20px;
+                border: none;
+                outline: none;
+                background:#0087ca;
+                color:white;
+                margin-top: 20px;
+                margin-left: 160px;
+            }
+            #button:hover{
+                background:#02496d;
+                color:black;
+                cursor: pointer;
+            }
+</style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/company">Company</a></li>
+            <li><a href="/stack">Stacks</a></li>
+            <li><a href="/purchase">Purchase</a></li>
+            <li><a href="/saleslist">Sales</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="card">
+            <form action="" method="post">
+                <h2>Purchase</h2>
+                <input type="text" placeholder="Item ID" id="name" name="ID">
+                <select id="name" name="item">
+                    <option value="Pen">Pen</option>
+                    <option value="Pencil">Pencil</option>
+                    <option value="Scale">Scale</option>
+                    <option value="Box">Box</option>
+                    <option value="Bag">Bag</option>
+                    <option value="Bottle">Bottle</option>
+                </select>
+                <input type="number" placeholder="Quantity" id="name" name="qty">
+                <input type="number" placeholder="Rate" id="name" name="rate">
+                <button type="submit" id="button" >Purchase</button>
+            </form>
+        </div>
+    </div>
+</body>
